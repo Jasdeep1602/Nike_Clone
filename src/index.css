@@ -76,7 +76,7 @@
     @apply px-7 py-1 rounded active:scale-90 transition-all duration-100 ease-in-out shadow-md sm:text-sm;
   }
 
-  /* tranistions-theme */
+  /* transitions-theme */
   .transitions-theme {
     @apply transition-all duration-700 ease-in-out cursor-pointer;
   }
