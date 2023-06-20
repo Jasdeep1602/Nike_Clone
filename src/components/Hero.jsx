@@ -1,4 +1,6 @@
 import React from 'react'
+import Clips from './utils/Clips'
+import SocialLink from './utils/SocialLink'
 
 const Hero = ({
   heroapi: { title, subtitle, btntext, img, sociallinks, videos },
@@ -19,10 +21,18 @@ const Hero = ({
             className='button-theme bg-slate-200 shadow-slate-200 rounded-xl my-5'>
             {btntext}
           </button>
-          {/* <div className=''>{sociallinks}</div>
-          <div className=''>{videos}</div> */}
+          <div className=' grid items-center gap-5 md:gap-3 absolute top-[33vh] lg;top-[27vh] left-[11%] xl:left-0 w-auto h-auto'>
+            {videos?.map((val, i) => (
+              <Clips key={i} imgsrc={val.imgsrc} clip={val.clip} />
+            ))}
+          </div>
+          <div className='grid items-center absolute top-[33vh] lg:top-[27vh] right-0 gap-3 '>
+            {sociallinks?.map((val, i) => (
+              <SocialLink key={i} icon={val.icon} />
+            ))}
+          </div>
         </div>
-        <div className=''>
+        <div className='flex items-center'>
           <img
             src={img}
             alt='hero-img/img'
