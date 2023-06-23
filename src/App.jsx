@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, Sales, FlexContent, Stories } from './components'
+import { Hero, Sales, FlexContent, Stories, Footer } from './components'
 import {
   heroapi,
   highlight,
@@ -7,6 +7,7 @@ import {
   popularsales,
   toprateslaes,
   story,
+  footerAPI,
 } from './data/data.js'
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <FlexContent endpoint={sneaker} />
         <Stories story={story} />
       </main>
+      <Footer footerAPI={footerAPI} />
     </>
   )
 }
