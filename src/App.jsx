@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, Sales, FlexContent, Stories, Footer } from './components'
+import { Hero, Sales, FlexContent, Stories, Footer, Navbar } from './components'
 import {
   heroapi,
   highlight,
@@ -13,6 +13,7 @@ import {
 const App = () => {
   return (
     <>
+      <Navbar />
       <main className='flex flex-col gap-16 relative'>
         <Hero heroapi={heroapi} />
         <Sales endpoint={popularsales} ifExists />
