@@ -14,7 +14,7 @@ const CartCount = ({ onCartToggle }) => {
           <div className='grid item-center'>
             <h1 className='text-base font-medium text-slate-900'>
               Your Cart
-              <span className='bg-theme-cart rounded px-1 py-0.5 text-slate-100 font-normal text-xs'>
+              <span className='bg-theme-cart rounded  ml-1 px-1 py-0.5 text-slate-100 font-normal text-xs'>
                 (Items)
               </span>
             </h1>

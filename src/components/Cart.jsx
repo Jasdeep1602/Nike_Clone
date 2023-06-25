@@ -1,6 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectCartState, setCloseCart } from '../app/CartSlice.js'
+import {
+  selectCartState,
+  setCloseCart,
+  selectCartItems,
+} from '../app/CartSlice.js'
 import CartCount from './cart/CartCount'
 import CartEmpty from './cart/CartEmpty'
 import CartItem from './cart/CartItem'
@@ -8,6 +12,7 @@ import CartItem from './cart/CartItem'
 const Cart = () => {
   const dispatch = useDispatch()
   const ifCartState = useSelector(selectCartState)
+  const cartItems = useSelector(selectCartItems)
 
   const onCartToggle = () => {
     dispatch(
@@ -27,8 +32,18 @@ const Cart = () => {
         <div
           className={`blur-effect-theme h-screen max-w-xl w-full absolute right-0`}>
           <CartCount onCartToggle={onCartToggle} />
-          <CartEmpty />
-          <CartItem />
+
+          {cartItems?.lenght === 0 ? (
+            <CartEmpty />
+          ) : (
+            <div>
+              <div className='flex items-start justify-start flex-col gap-y-7 lg:gap-y-5 overflow-y-scroll h-[81vh] scroll-smooth scroll-hidden'>
+                {cartItems?.map((item, i) => (
+                  <CartItem key={i} item={item} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
