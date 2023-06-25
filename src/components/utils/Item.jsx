@@ -22,6 +22,13 @@ const Item = ({
     dispatch(setAddItemToCart(item))
   }
 
+  const onCartToggle = () => {
+    dispatch(
+      setOpenCart({
+        cartState: true,
+      })
+    )
+  }
   return (
     <>
       <div
@@ -59,7 +66,11 @@ const Item = ({
             </button>
             <button
               type='button'
-              className='bg-white opacity-90 blur-effect-theme button-theme px-2 py-1 shadow-sky-200 text-sm text-black'>
+              className='bg-white opacity-90 blur-effect-theme button-theme px-2 py-1 shadow-sky-200 text-sm text-black'
+              onClick={() => {
+                onAddToCart()
+                onCartToggle()
+              }}>
               {btn}
             </button>
           </div>
